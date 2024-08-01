@@ -1,16 +1,17 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Button } from "flowbite-react";
 import { FaTrash } from "react-icons/fa";
 import {
   removeFromCart,
   incrementQuantity,
   decrementQuantity,
 } from "../redux/slices/cartSlice";
+import { Button } from "flowbite-react";
 
 const CartModal = ({ isOpen, handleClose }) => {
   const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
+
   const handleDelete = (id) => dispatch(removeFromCart({ id }));
   const handleIncrement = (id) => dispatch(incrementQuantity({ id }));
   const handleDecrement = (id) => dispatch(decrementQuantity({ id }));

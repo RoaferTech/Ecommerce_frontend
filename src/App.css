@@ -1,0 +1,9 @@
+.custom-navbar-link {
+  color: inherit;
+  transition: color 0.3s ease-in-out;
+}
+
+.custom-navbar-link:hover,
+.custom-navbar-link:active {
+  color: #ff4c3b !important;
+}
