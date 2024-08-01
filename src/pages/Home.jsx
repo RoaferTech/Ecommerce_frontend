@@ -12,7 +12,7 @@ import FooterComponent from "../components/Footer";
 const Home = () => {
   return (
     <>
-      <NavbarCom />
+      {/* <NavbarCom /> */}
       <BannerCarousel />
       <CategoryCards />
       <TopCollection />
@@ -46,7 +46,7 @@ const Home = () => {
         <CollectionsCards />
       </div>
       <CompanyCard />
-      <FooterComponent />
+      {/* <FooterComponent /> */}
     </>
   );
 };

@@ -40,7 +40,7 @@ export const productsData = [
     category: "SPECIAL",
   },
     {
-    id:5,
+    id:6,
     title: "trim dress",
     imageUrl: "src/assets/productImages/p8.jpg",
     price: 120.0,
