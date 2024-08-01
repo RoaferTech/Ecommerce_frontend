@@ -16,7 +16,7 @@ function App() {
       <CategoryCards />
       <TopCollection />
 
-      <div className="bg-[url('src/assets/bg.jpg')] bg-fixed w-screen bg-cover bg-no-repeat py-[30px] md:py-[190px] md:bg-[50%] bg-center overflow-hidden ">
+      <div className="bg-[url('src/assets/bg.jpg')] bg-fixed w-full bg-cover bg-no-repeat py-[30px] md:py-[190px] md:bg-[50%] bg-center overflow-hidden ">
         <div className="max-w-[1140px] mx-auto">
           <div className="text-center w-screen md:w-[500px] lg:w-[600px] bg-[#FFFFFF33] md:bg-transparent p-[25px]">
             <h2 className="text-[60px] lg:text-[90px] font-semibold lg:font-bold text-[#FF4C3B] uppercase tracking-wide">

@@ -1,8 +1,10 @@
 import React from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { Navbar } from "flowbite-react";
+import { useSelector } from "react-redux";
 
 const NavbarCom = () => {
+  const cartItemsCount = useSelector((state) => state.cart.items.length);
   return (
     <Navbar fluid rounded className="bg-white shadow-md">
       <Navbar.Brand>
@@ -11,7 +13,14 @@ const NavbarCom = () => {
         </span>
       </Navbar.Brand>
       <div className="flex items-center md:order-2">
-        <IoCartOutline className="text-2xl text-black mx-4" />
+        <div className="relative">
+          <IoCartOutline className="text-2xl" />
+          {cartItemsCount > 0 && (
+            <span className="absolute top-[-10px] right-[-10px] bg-[#FF4C3B] text-white rounded-full text-xs px-2 py-1">
+              {cartItemsCount}
+            </span>
+          )}
+        </div>
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>

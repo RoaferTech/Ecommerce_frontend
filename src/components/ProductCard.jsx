@@ -1,7 +1,12 @@
 import React from "react";
 import { FaShoppingCart, FaHeart, FaEye } from "react-icons/fa";
-
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/slices/cartSlice";
 const ProductCard = ({ product }) => {
+  const dispatch = useDispatch();
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+  };
   return (
     <div className="bg-white overflow-hidden mt-4 w-full">
       <div className="relative group overflow-hidden">
@@ -12,7 +17,7 @@ const ProductCard = ({ product }) => {
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <button className="text-white mx-2">
-            <FaShoppingCart size={24} />
+            <FaShoppingCart size={24} onClick={handleAddToCart} />
           </button>
           <button className="text-white mx-2">
             <FaHeart size={24} />
