@@ -1,12 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { FaTrash } from "react-icons/fa";
+import { FaTrash, FaTimes } from "react-icons/fa";
 import {
   removeFromCart,
   incrementQuantity,
   decrementQuantity,
 } from "../redux/slices/cartSlice";
-import { Button } from "flowbite-react";
 
 const CartModal = ({ isOpen, handleClose }) => {
   const cartItems = useSelector((state) => state.cart.items);
@@ -25,7 +24,10 @@ const CartModal = ({ isOpen, handleClose }) => {
 
   return (
     <div className="absolute right-0 top-12 bg-white shadow-lg rounded-lg w-72 max-h-[400px] overflow-y-auto p-4 border border-gray-200">
-      <h3 className="font-bold text-lg mb-2">Shopping Cart</h3>
+      <div className=" flex justify-between">
+        <h3 className="font-bold text-lg mb-2">Shopping Cart</h3>
+        <FaTimes onClick={handleClose} className=" cursor-pointer" />
+      </div>
       {cartItems.length === 0 ? (
         <p className="text-center">Your cart is empty.</p>
       ) : (
@@ -79,10 +81,13 @@ const CartModal = ({ isOpen, handleClose }) => {
           </div>
         </>
       )}
-      <div className="mt-4 text-center">
-        <Button color="gray" onClick={handleClose}>
-          Close
-        </Button>
+      <div className="mt-4 flex justify-between space-x-2">
+        <button className="flex-1 bg-gray-300 text-gray-700 py-2 rounded hover:bg-gray-400">
+          View Cart
+        </button>
+        <button className="flex-1 bg-[#FF4C3B] text-white py-2 rounded hover:bg-red-600">
+          Checkout
+        </button>
       </div>
     </div>
   );
