@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { productsData } from "../data/data";
-
 const DetailProduct = () => {
   const { id } = useParams();
   const product = productsData.find((item) => item.id === parseInt(id));
@@ -9,11 +8,10 @@ const DetailProduct = () => {
   if (!product) {
     return <div>Product not found</div>;
   }
-  console.log(product.imageUrl);
   return (
     <div className="p-4 max-w-2xl mx-auto">
       <img
-        src={product.imageUrl}
+        src={`/${product.imageUrl}`}
         alt={product.title}
         className="w-full h-[500px] object-cover mb-4"
       />

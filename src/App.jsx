@@ -5,10 +5,12 @@ import NavbarCom from "./components/Navbar";
 import DetailProduct from "./components/ProductDetail";
 import FooterComponent from "./components/Footer";
 import "./App.css";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div>
         <NavbarCom />
         <Routes>

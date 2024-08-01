@@ -3,7 +3,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { Navbar } from "flowbite-react";
 import { useSelector } from "react-redux";
 import CartModal from "./CartModal";
-
+import { Link } from "react-router-dom";
 const NavbarCom = () => {
   const [isOpen, setIsOpen] = useState(false);
   const cartItems = useSelector((state) => state.cart.items);
@@ -31,9 +31,9 @@ const NavbarCom = () => {
       </div>
       <Navbar.Toggle />
       <Navbar.Collapse>
-        <Navbar.Link href="#" className="custom-navbar-link">
+        <Link to="/" className="custom-navbar-link">
           Home
-        </Navbar.Link>
+        </Link>
         <Navbar.Link href="#" className="custom-navbar-link">
           Services
         </Navbar.Link>
