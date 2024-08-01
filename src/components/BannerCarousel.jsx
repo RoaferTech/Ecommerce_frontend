@@ -40,7 +40,7 @@ const BannerCarousel = () => {
               </h1>
               <div className="text-center  mt-4 font-[inter]">
                 <button
-                  className="px-6 py-3 text-white border-2 uppercase border-[#FF4C3B] transition-transform duration-300 transform hover:scale-105 hover:bg-white hover:text-black"
+                  className="px-[29px] py-3 text-white border-2 uppercase border-[#FF4C3B] transition-all duration-300 bg-[0px] hover:bg-white hover:text-black hover:bg-[100%]"
                   style={{
                     backgroundSize: "560px",
                     backgroundImage:
