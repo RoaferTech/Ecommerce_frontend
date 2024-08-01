@@ -1,24 +1,28 @@
 
 export const topCollection = [
   {
+     id:1,
     title: "trim dress",
     imageUrl: "src/assets/productImages/p1.jpg",
     price: 120.0,
     discountedPrice: 90.0,
   },
   {
+     id:2,
     title: "trim dress",
     imageUrl:"src/assets/productImages/p2.jpg",
     price: 120.0,
     discountedPrice: 90.0,
   },
   {
+     id:3,
     title: "trim dress",
     imageUrl: "src/assets/productImages/p3.jpg",
     price: 120.0,
     discountedPrice: 90.0,
   },
   {
+     id:4,
     title: "trim dress",
     imageUrl: "src/assets/productImages/p4.jpg",
     price: 120.0,
@@ -27,6 +31,7 @@ export const topCollection = [
 ];
 export const productsData = [
  {
+  id:1,
     title: "trim dress",
     imageUrl: "src/assets/productImages/p8.jpg",
     price: 120.0,
@@ -34,6 +39,7 @@ export const productsData = [
     category: "NEW ARRIVAL",
   },
   {
+    id:2,
     title: "trim dress",
     imageUrl: "src/assets/productImages/p7.jpg",
     price: 120.0,
@@ -41,6 +47,7 @@ export const productsData = [
     category: "FEATURED",
   },
   {
+    id:3,
     title: "trim dress",
     imageUrl: "src/assets/productImages/p6.jpg",
     price: 120.0,
@@ -48,6 +55,7 @@ export const productsData = [
     category: "SPECIAL",
   },
     {
+      id:4,
     title: "trim dress",
     imageUrl: "src/assets/productImages/p1.jpg",
     price: 120.0,
