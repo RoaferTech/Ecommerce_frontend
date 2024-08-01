@@ -2,7 +2,7 @@ import React from "react";
 import ProductCard from "./ProductCard";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { topCollection } from "../data/data";
+import { productsData } from "../data/data";
 
 const responsive = {
   superLargeDesktop: {
@@ -53,7 +53,7 @@ const TopCollection = () => {
         dotListClass="custom-dot-list-style"
         arrows={false}
       >
-        {topCollection.map((product, index) => (
+        {productsData.slice(0, 4).map((product, index) => (
           <div key={index} className="p-2">
             <ProductCard product={product} />
           </div>

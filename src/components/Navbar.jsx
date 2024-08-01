@@ -3,7 +3,11 @@ import { IoCartOutline } from "react-icons/io5";
 import { Navbar, Button } from "flowbite-react";
 import { useSelector, useDispatch } from "react-redux";
 import { FaTrash } from "react-icons/fa";
-import { removeFromCart } from "../redux/slices/cartSlice";
+import {
+  removeFromCart,
+  incrementQuantity,
+  decrementQuantity,
+} from "../redux/slices/cartSlice";
 
 const NavbarCom = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +16,9 @@ const NavbarCom = () => {
 
   const handleOpenDropdown = () => setIsOpen(!isOpen);
   const handleCloseDropdown = () => setIsOpen(false);
-  const handleDelete = (id) => dispatch(removeFromCart(id));
+  const handleDelete = (id) => dispatch(removeFromCart({ id }));
+  const handleIncrement = (id) => dispatch(incrementQuantity({ id }));
+  const handleDecrement = (id) => dispatch(decrementQuantity({ id }));
 
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.discountedPrice * item.quantity,
@@ -20,7 +26,7 @@ const NavbarCom = () => {
   );
 
   return (
-    <Navbar fluid rounded className="sticky top-0 z-50 bg-white shadow-md">
+    <Navbar fluid rounded className="sticky top-0 z-50 bg-white">
       <Navbar.Brand>
         <span className="self-center whitespace-nowrap text-2xl py-5 dark:text-white uppercase tracking-widest font-bold">
           Feshion
@@ -59,6 +65,23 @@ const NavbarCom = () => {
                         <p className="text-gray-500 text-xs">
                           ${item.discountedPrice.toFixed(2)}
                         </p>
+                        <div className="flex items-center mt-1">
+                          <button
+                            onClick={() => handleDecrement(item.id)}
+                            className="px-2 py-1 bg-gray-200 rounded-l-md"
+                          >
+                            -
+                          </button>
+                          <span className="px-2 py-1 bg-gray-100">
+                            {item.quantity}
+                          </span>
+                          <button
+                            onClick={() => handleIncrement(item.id)}
+                            className="px-2 py-1 bg-gray-200 rounded-r-md"
+                          >
+                            +
+                          </button>
+                        </div>
                       </div>
                       <button
                         onClick={() => handleDelete(item.id)}
